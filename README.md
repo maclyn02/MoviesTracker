@@ -18,7 +18,7 @@ pip3 install -r requirements.txt
 ## Running Server
 
 ```buildoutcfg
-./mange.py migrate
-./mange.py runserver
+./manage.py migrate
+./manage.py runserver
 ```
 ### Go and check `http://127.0.0.1:8000/`
