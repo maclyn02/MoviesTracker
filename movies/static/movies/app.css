@@ -120,7 +120,7 @@ body::before {
 }
 
 .movies__item {
-    width: 33.33333%;
+    width: 13.33333%;
     border-radius: 4px;
     position: relative;
 }
@@ -138,8 +138,8 @@ body::before {
 
 .movies__item-image {
     transition: all 0.2s ease;
-	width: 100%;
-    height: 45vw;
+	  width: 100%;
+    height: 15vw;
     max-height: 35.626rem;
     box-shadow: 0 0 5px 2px rgba(0,0,0,0.1);
 }
