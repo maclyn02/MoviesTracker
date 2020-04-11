@@ -17,6 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+<<<<<<< HEAD
     path('admin/', admin.site.urls),
     path('', include('movies.urls')),
+=======
+    path('admin/' , admin.site.urls),
+    path('' , include('movies.urls'))
+>>>>>>> step_0_start
 ]
