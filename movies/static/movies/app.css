@@ -140,6 +140,7 @@ body::before {
 }
 
 .movies__item-title p.movie_comments {
+  margin-top: 50px;
   font-family: 'Assistant', sans-serif;
 }
 

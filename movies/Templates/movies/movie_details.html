@@ -1,4 +1,4 @@
-<div class="modal fade" id="details-modal-{{movie.id}}">
+<div class="modal" id="details-modal-{{movie.id}}">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -10,7 +10,6 @@
       </div>
 
       <div class="modal-body">
-        <div class="movie__item full-width">
 
           <i class="movies__item-star fa fa-star hide"></i>
           <p class="movies__item-rating hide">{{movie.rating}}/10</p>
@@ -19,12 +18,11 @@
             <p class="movie_comments">{{movie.comments}}</p>
           </div>
 
-        </div>
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal-{{movie.id}}">Edit</button>
-        <input type="submit" class="btn btn-danger" name="delete-{{movie.id}}" value="Delete"/>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal-{{movie.id}}" data-dismiss="modal">Edit</button>
+        <a href="{% url 'delete' movieID=movie.id %}" class="btn btn-danger">Delete</a>
       </div>
 
     </div>

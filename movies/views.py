@@ -58,3 +58,14 @@ def edit(request , movieID):
             pass
 
     return redirect('/')
+
+def delete(request , movieID):
+    try:
+        movieObj = Movie.objects.get(id=movieID)
+        movieObj.delete()
+
+    except Exception as e:
+        print("Error in  Delete " + e)
+        pass
+
+    return redirect('/')
