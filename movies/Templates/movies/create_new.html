@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<div class="modal fade" id="modal-create">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Create New</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form class="" action="{% url 'create' %}" method="post">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="movieName"></label>
+            <input type="text" id="movieName" class="form-control" name="movie_name" placeholder="Enter Movie Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="moviePicture"></label>
+            <input type="text" id="moviePicture" class="form-control" name="movie_picture" placeholder="Paste image url link (optional)">
+          </div>
+
+          <div class="form-group">
+            <label for="movieRating"></label>
+            <input type="text" id="movieRating" class="form-control" name="movie_rating" placeholder="1-10" min="0" max="10" required>
+          </div>
+
+          <div class="form-group">
+            <label for="movieComments"></label>
+            <textarea id="movieComments" class="form-control" name="movie_comments" placeholder="(optional)"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add</button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
