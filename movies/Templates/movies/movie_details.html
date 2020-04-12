@@ -1,0 +1,32 @@
+<div class="modal fade" id="details-modal-{{movie.id}}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title modal-title-text" id="modalTitle"> {{movie.name}} </h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="movie__item full-width">
+
+          <i class="movies__item-star fa fa-star hide"></i>
+          <p class="movies__item-rating hide">{{movie.rating}}/10</p>
+          <img class="movies__item-image" src="{{movie.picture}}" alt=""/>
+          <div class="movies__item-title">
+            <p class="movie_comments">{{movie.comments}}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal-{{movie.id}}">Edit</button>
+        <input type="submit" class="btn btn-danger" name="delete-{{movie.id}}" value="Delete"/>
+      </div>
+
+    </div>
+  </div>
+</div>

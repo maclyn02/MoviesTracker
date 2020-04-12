@@ -30,7 +30,31 @@ def create(request):
                 comments = data.get('comments')
             )
         except Exception as e:
-            print(e)
+            print("Error in  Create " + e)
+            pass
+
+    return redirect('/')
+
+#'movieID' is passed explicitly from frontend -> form action(also in urls.py path[])
+def edit(request , movieID):
+    if request.method == 'POST':
+        data = {
+            'name' : request.POST.get('edit-movie_name'),
+            'picture' : request.POST.get('edit-movie_picture'),
+            'rating' : int(request.POST.get('edit-movie_rating')),
+            'comments' : request.POST.get('edit-movie_comments')
+        }
+        try:
+            movieObj = Movie.objects.get(id=movieID)
+            movieObj.name = data.get('name')
+            movieObj.picture = data.get('picture')
+            movieObj.rating = int(data.get('rating'))
+            movieObj.comments = data.get('comments')
+
+            movieObj.save()
+
+        except Exception as e:
+            print("Error in  Edit " + e)
             pass
 
     return redirect('/')
