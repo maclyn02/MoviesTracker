@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 # import class created in models.py
 from .models import Movie
@@ -29,9 +30,10 @@ def create(request):
                 rating = data.get('rating'),
                 comments = data.get('comments')
             )
+
+            messages.success(request, "Added new Drama : {}".format(data.get('name')))
         except Exception as e:
-            print("Error in  Create " + e)
-            pass
+            messages.warning(request, "Error creating new entry {}".format(e))
 
     return redirect('/')
 
@@ -52,20 +54,21 @@ def edit(request , movieID):
             movieObj.comments = data.get('comments')
 
             movieObj.save()
+            messages.success(request, "Updated 1 Drama : {}".format(data.get('name')))
 
         except Exception as e:
-            print("Error in  Edit " + e)
-            pass
+            messages.warning(request, "Error in updating {}".format(e))
 
     return redirect('/')
 
 def delete(request , movieID):
     try:
         movieObj = Movie.objects.get(id=movieID)
+        movie_name = movieObj.name;
         movieObj.delete()
+        messages.success(request, f"Deleted 1 Drama : {movie_name}")
 
     except Exception as e:
-        print("Error in  Delete " + e)
-        pass
+        messages.warning(request, "Error in delete {}".format(e))
 
     return redirect('/')
