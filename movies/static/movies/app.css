@@ -20,7 +20,7 @@ body::before {
     left: 0;
     width: 100%;
     content: " ";
-	border-bottom: 0.5rem solid #FCAB07;
+	  border-bottom: 0.5rem solid #FCAB07;
     z-index: 9999;
 }
 
@@ -50,6 +50,7 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10000;
 }
 
 .nav__menu {
@@ -86,7 +87,7 @@ body::before {
     font-size: 1.4rem;
     padding: 1rem 1.2rem;
     font-family: 'Open Sans', sans-serif;
-	caret-color: #FCAB07;
+	  caret-color: #FCAB07;
 }
 
 .search-form__query:focus {
@@ -105,8 +106,6 @@ body::before {
 
 .main {
     background: #202020;
-    /* fallback for old browsers */
-	/*     background-image: url('./clock-pattern.png'); */
 }
 
 .result {
@@ -238,6 +237,12 @@ body::before {
 
 .modal-title-text {
   font-family: 'Puritan', sans-serif;
+}
+
+.result-stats {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2rem;
+    color: #eee;
 }
 
 @media only screen and (max-width: 1224px) {
